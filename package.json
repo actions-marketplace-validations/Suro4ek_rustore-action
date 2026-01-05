@@ -1,0 +1,17 @@
+{
+  "name": "rustore-action",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.js -o dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["github-action", "rustore", "android", "apk", "aab"],
+  "author": "",
+  "license": "MIT",
+  "description": "GitHub Action to upload APK/AAB to RuStore",
+  "dependencies": {
+    "@actions/core": "^2.0.1",
+    "@vercel/ncc": "^0.38.4"
+  }
+}

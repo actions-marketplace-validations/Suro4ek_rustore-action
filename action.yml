@@ -1,0 +1,50 @@
+name: 'RuStore Publish'
+description: 'Upload APK or AAB to RuStore'
+author: 'Your Name'
+
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
+
+inputs:
+  key_id:
+    description: 'RuStore API Key ID (company ID)'
+    required: true
+  private_key:
+    description: 'RuStore private key in base64 PKCS#8 format'
+    required: true
+  application_id:
+    description: 'Application package name (e.g., com.example.app)'
+    required: true
+  file:
+    description: 'Path to APK or AAB file'
+    required: true
+  whats_new:
+    description: 'Release notes (what is new in this version). Required by RuStore API (1-5000 chars)'
+    required: true
+  publish_type:
+    description: 'Publish type: MANUAL, INSTANTLY, or DELAYED'
+    required: false
+    default: 'MANUAL'
+  mobile_services:
+    description: 'Mobile services type: HMS or Unknown (only for APK)'
+    required: false
+    default: 'Unknown'
+  priority_update:
+    description: 'Priority update level (0-10, 0 = no priority)'
+    required: false
+    default: '0'
+  submit:
+    description: 'Submit for review after upload (true/false)'
+    required: false
+    default: 'true'
+
+outputs:
+  version_id:
+    description: 'Created version ID'
+  status:
+    description: 'Publication status (submitted/draft)'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

@@ -1,0 +1,8 @@
+node_modules/
+*.apk
+*.aab
+test
+*.pem
+*.p8
+*.key
+.env
